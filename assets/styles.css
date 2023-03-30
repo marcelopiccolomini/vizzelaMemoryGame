@@ -17,6 +17,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 576px;
 }
 
 .controls {
@@ -48,6 +49,7 @@ button {
 .board-container {
     position: relative;
     object-fit: cover;
+    max-width: 576px;
     
 }
 
