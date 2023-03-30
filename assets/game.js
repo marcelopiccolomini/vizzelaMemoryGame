@@ -54,7 +54,7 @@ const generateGame = () => {
     const picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
     const items = shuffle([...picks, ...picks])
     const cards = `
-        <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)">
+        <div class="board" style="grid-template-columns: repeat(3, auto)">
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
