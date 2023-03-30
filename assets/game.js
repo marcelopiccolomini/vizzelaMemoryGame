@@ -51,7 +51,7 @@ const generateGame = () => {
     }
 
     const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
-    const picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
+    const picks = pickRandom(emojis, 12 / 2) 
     const items = shuffle([...picks, ...picks])
     const cards = `
         <div class="board" style="grid-template-columns: repeat(3, auto)">
