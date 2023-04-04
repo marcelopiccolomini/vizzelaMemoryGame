@@ -50,7 +50,8 @@ const generateGame = () => {
         throw new Error("The dimension of the board must be an even number.")
     }
 
-    const emojis = ['jogo-da-memoria-01.jpg', 'jogo-da-memoria-02.jpg', 'jogo-da-memoria-03.jpg', 'jogo-da-memoria-05.jpg', 'jogo-da-memoria-04.jpg', 'jogo-da-memoria-06.jpg']
+    const emojis = ['jogo-da-memoria-01.jpg', 'jogo-da-memoria-02.jpg', 'jogo-da-memoria-03.jpg', 'jogo-da-memoria-05.jpg', 'jogo-da-memoria-04.jpg', 'jogo-da-memoria-06.jpg',
+    'jogo-da-memoria-07.jpg', 'jogo-da-memoria-08.jpg', 'jogo-da-memoria-09.jpg', 'jogo-da-memoria-10.jpg', 'jogo-da-memoria-11.jpg', 'jogo-da-memoria-12.jpg']
     const picks = pickRandom(emojis, 12 / 2) 
     const items = shuffle([...picks, ...picks])
     const cards = `
