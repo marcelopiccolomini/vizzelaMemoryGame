@@ -50,7 +50,7 @@ const generateGame = () => {
         throw new Error("The dimension of the board must be an even number.")
     }
 
-    const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
+    const emojis = ['jogo-da-memoria-01.jpg', 'jogo-da-memoria-02.jpg', 'jogo-da-memoria-03.jpg', 'jogo-da-memoria-05.jpg', 'jogo-da-memoria-04.jpg', 'jogo-da-memoria-06.jpg']
     const picks = pickRandom(emojis, 12 / 2) 
     const items = shuffle([...picks, ...picks])
     const cards = `
@@ -58,11 +58,12 @@ const generateGame = () => {
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
-                    <div class="card-back">${item}</div>
+                    <div class="card-back" style="background-image: url(${item}); background-size: 100px;">${item}</div>
                 </div>
             `).join('')}
        </div>
-    `
+    `    
+
     
     const parser = new DOMParser().parseFromString(cards, 'text/html')
 
@@ -71,7 +72,6 @@ const generateGame = () => {
 
 const startGame = () => {
     state.gameStarted = true
-    selectors.start.classList.add('disabled')
 
     state.loop = setInterval(() => {
         state.totalTime++
@@ -79,6 +79,10 @@ const startGame = () => {
         selectors.moves.innerText = `${state.totalFlips} jogadas`
         selectors.timer.innerText = `tempo: ${state.totalTime} sec`
     }, 1000)
+}
+
+const reStartGame = () => {
+    document.location.reload(true)
 }
 
 const flipBackCards = () => {
@@ -138,8 +142,8 @@ const attachEventListeners = () => {
 
         if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
             flipCard(eventParent)
-        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
-            startGame()
+        } else if (eventTarget.nodeName === 'BUTTON') {
+            reStartGame()
         }
     })
 }

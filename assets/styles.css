@@ -87,18 +87,19 @@ button {
     border-radius: 5px;
     width: 100%;
     height: 100%;
-    background: #000000;
+    background-image: url("Vizzela-jogo-damemoria-verso.jpg");
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
 
 .card-back {
     transform: rotateY(180deg) rotateZ(50deg);
-    font-size: 28pt;
+    font-size: 0pt;
     user-select: none;
     text-align: center;
     line-height: 100px;
-    background: #FDF8E6;
 }
 
 .card.flipped .card-front {
