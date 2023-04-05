@@ -59,7 +59,7 @@ const generateGame = () => {
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
-                    <div class="card-back" style="background-image: url(${item}); background-size: 100px;">${item}</div>
+                    <div class="card-back" style="background-image: url(./images/${item}); background-size: 100px;">${item}</div>
                 </div>
             `).join('')}
        </div>
